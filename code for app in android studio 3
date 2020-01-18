@@ -1,0 +1,77 @@
+package com.example.intentschallenge;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class Activity2 extends AppCompatActivity implements View.OnClickListener {
+
+    EditText etname, etnumber,etwebsite,etplace;
+    ImageView ivsmile,ivok,ivsad;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_2);
+
+        etname=findViewById(R.id.etname);
+        etnumber=findViewById(R.id.etnumber);
+        etwebsite=findViewById(R.id.etwebsite);
+        etplace= findViewById(R.id.etplace);
+        ivsmile=findViewById(R.id.ivsmile);
+        ivok=findViewById(R.id.ivok);
+        ivsad=findViewById(R.id.ivsad);
+
+
+        ivsmile.setOnClickListener(this);
+        ivok.setOnClickListener(this);
+        ivsad.setOnClickListener(this);
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(etname.getText().toString().isEmpty()||
+        etnumber.getText().toString().isEmpty()||
+        etwebsite.getText().toString().isEmpty()||
+        etplace.getText().toString().isEmpty())
+        {
+            Toast.makeText(this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Intent intent = new Intent();
+            intent.putExtra("name",etname.getText().toString().trim());
+            intent.putExtra("number",etnumber.getText().toString().trim());
+            intent.putExtra("web",etwebsite.getText().toString().trim());
+            intent.putExtra("place",etplace.getText().toString().trim());
+
+            if(v.getId()==R.id.ivsmile)
+            {
+                intent.putExtra("mood", "smile");
+
+            }
+            else if(v.getId()==R.id.ivok)
+            {
+                intent.putExtra("mood","ok");
+
+            }
+            else if(v.getId()==R.id.ivsad)
+            {
+                intent.putExtra("mood","sad");
+
+            }
+            setResult(RESULT_OK,intent);
+            Activity2.this.finish();
+            
+        }
+
+    }
+}
