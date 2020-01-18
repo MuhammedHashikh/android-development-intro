@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/contacts_app"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/ivmood"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/smile" />
+
+    <ImageView
+        android:id="@+id/ivphone"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        app:srcCompat="@drawable/phone" />
+
+    <ImageView
+        android:id="@+id/ivweb"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        app:srcCompat="@drawable/tab" />
+
+    <ImageView
+        android:id="@+id/ivplace"
+        android:layout_width="50dp"
+        android:layout_height="47dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        app:srcCompat="@drawable/place" />
+
+    <Button
+        android:id="@+id/btncreatecontact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/create_contact"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+</LinearLayout>
